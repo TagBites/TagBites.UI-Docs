@@ -2,8 +2,8 @@
 * Components
   * [Button](Components/button.md)
   * [Checkbox](Components/checkbox.md)
+  * [Combobox](Components/combobox.md)
   * [DateTime](Components/datetime.md)
-  * [Dictionary](Components/dictionary.md)
   * [Numeric](Components/numeric.md)
-  * [Text](Components/text.md)
+  * [Text](Components/textfield.md)
   * [Time](Components/time.md)

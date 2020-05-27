@@ -1,19 +1,27 @@
-# Text
+# Text field
 
-A text field is implemented for `public` property of `string` type with `UILayoutAttribute` attribute.
+**Types automatically recognized:** `string`
 
+**Behavior control attribute:**  `UIStringAttribute`
+
+###  Example
 ```csharp
 [UILayout]
 public string Text { get; set; }
 ```
 
-To customize text field with settings like e.g. minimum or maximum value the property requires `UIStringAttribute` attribute.
+## Parameters setting
 
-**Note:** The `UILayoutAttribute` attribute is not required if property has the `UIStringAttribute` attribute, unless it defines location of a field (e.g. row and column).
+| Parameter | `UIStringAttribute` property | 
+| -----------|:------------- 
+| String type | `UIStringType` |
+| Maximum length | `MaximumLength` |
+| Minimum line count | `MinimumLineCount` |
+| Maximum line count | `MaximumLineCount` |
+| Horizontal alignment | `HorizontalAlignment` |
 
 
 ## String type
-`UIStringAttribute` allows to set a type of sting. The default is `UIStringType.None`.
 
 | UIStringType | Description | 
 | ------------- |:------------- 
@@ -23,9 +31,10 @@ To customize text field with settings like e.g. minimum or maximum value the pro
 | `Password` | Specifies that a text is presented as password. |
 | `Email` | Specifies that a text is formatted as a email. |
 | `Telephone` | Specifies that a text is formatted as a telephone. |
-| `Url` | Specifies that a text is formatted as a arl. |
+| `Url` | Specifies that a text is formatted as a url. |
 
-### Example
+**Note:** The default is `UIStringType.None`.
+
 ```csharp
 [UIString(UIStringType.None)]
 public string TextLine { get; set; }
@@ -50,25 +59,18 @@ public string Url { get; set; }
 ```
 
 ## Maximum length
-`UIStringAttribute` allows to set a maximum length of text. The default is 32767.
-
-### Example
 ```csharp
 [UIString(MaximumLength = 10)]
 public string Text { get; set; }
 ```
 
 ## Minimum and maximum line count
-`UIStringAttribute` allows to set a minimum line count and maximum line count.
-
-### Example
 ```csharp
 [UIString(MinimumLineCount = 2, MaximumLineCount = 10)]
 public string Text { get; set; }
 ```
 
 ## Horizontal alignment
-`UIStringAttribute` allows to set a horizontal alignment of a text string relative to its layout rectangle.
 
 | HorizontalAlignment | Description | 
 | ------------- |:------------- 
@@ -77,7 +79,7 @@ public string Text { get; set; }
 | `Center`     | Specifies that a text is aligned in the center. |
 | `Far`     | Specifies that a text is aligned far from the origin position of the layout rectangle. In a left-to-right layout, the far position is right. In a right-to-left layout, the far position is left. |
 
-### Example
+**Note:** The default is `UIStringAttribute.Default`.
 
 ```csharp
 [UIString(HorizontalAlignment = UIStringAlignment.Default)]

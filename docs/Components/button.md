@@ -1,7 +1,16 @@
 # Button
-A button is implemented using the `UIButtonAttribute` attribute, which is added to `public` property of `string` or `object` type. 
 
-Buttons can be connected with command or link.
+**Types automatically recognized:** None
+
+**Behavior control attribute:**  `UIButtonAttribute`
+
+###  Example
+```csharp
+[UIButton]
+public string ButtonField { get; set; }
+```
+
+**Note:** A button can be connected with command or link.
 
 ## Command button
 The value of property with `UIButtonAttribute` attribute is set to a name of method with `UICommandAttribute` attribute.
@@ -51,20 +60,10 @@ The value of property with `UIButtonAttribute` attribute is set to a link.
 public object Link => "https://tagbites.com";
 ```
 
-## Other Variants
-
-### Button with icon example
-
-**Note**: More about using `UIIconAttribute`. // TODO Link
+## Button with icon
 
 ```csharp
 [UIButton]
 [UIIcon(MaterialIcons.Call)]
-public string CommandName { get; set; }
-```
-
-```csharp
-[UIButton]
-[UIIcon(AwesomeIcons.Edit)]
 public string CommandName { get; set; }
 ```

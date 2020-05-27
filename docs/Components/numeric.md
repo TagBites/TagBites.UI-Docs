@@ -1,115 +1,88 @@
 # Numeric
 
-A numeric field is implemented for `public` property of `byte`, `short`, `int`, `decimal`, `double` and `float` type and nullable variants with `UILayoutAttribute` attribute.
+**Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
 
+**Behavior control attribute:**  `UINumericAttribute`
+
+###  Example
 ```csharp
 [UILayout]
-public byte Byte { get; set; }
-[UILayout]
-public byte? NullableByte { get; set; }
-
-[UILayout]
-public short Short { get; set; }
-[UILayout]
-public short? NullableShort { get; set; }
-
-[UILayout]
-public int Integer { get; set; }
-[UILayout]
-public int? NullableInteger { get; set; }
-
-[UILayout]
 public decimal Decimal { get; set; }
-[UILayout]
-public decimal? NullableDecimal { get; set; }
-
-[UILayout]
-public double Double { get; set; }
-[UILayout]
-public double? NullableDouble { get; set; }
-
-[UILayout]
-public double Float { get; set; }
-[UILayout]
-public double? NullableFloat { get; set; }
 ```
 
-To customize numeric field with settings like e.g. minimum or maximum value the property requires `UINumericAttribute` attribute.
+## Parameters setting
 
-**Note:** The `UILayoutAttribute` attribute is not required if property has the `UINumericAttribute` attribute, unless it defines location of a field (e.g. row and column).
+| Parameter | `UINumericAttribute` property | 
+| -----------|:------------- 
+| Minimum | `Minimum` or `MinimumProperty` |
+| Maximum | `Maximum` or `MaximumMinimumProperty` |
+| Decimal places | `DecimalPlaces` or `DecimalPlacesProperty` |
+| Unit | `Unit` or `UnitProperty` |
+| View type | `ViewType` |
 
-## Minimum and maximum values
-`UINumericAttribute` allows to defines a minimum and maximum values. Both of these can be set as a constant values (`Minimum` nad `Maximum`) or using properties (`MinimumProperty` nad `MaximumProperty`), which enable for dynamic range change.
+##  Minimum and maximum
+Minimum and maximum parameters can be set as:
+* constant values using `Minimum` and `Maximum` properties
 
-### Constant minimum and maximum values example
 ```csharp
 [UINumeric(Minimum = 0, Maximum = 100)]
 public decimal Field { get; set; }
 ```
 
-### Dynamic minimum and maximum values example
+* dynamic values using binding with `MinimumProperty` and `MaximumProperty` properties.
+
 ```csharp
-[UINumeric(MinimumProperty = nameof(Minimum), MaximumProperty = nameof(Maximum))]
+[UINumeric(MinimumProperty = nameof(FieldMinimum), MaximumProperty = nameof(FieldMaximum))]
 public decimal Field { get; set; }
-public decimal Minimum => 0;
-public decimal Maximum => 100;
+public decimal FieldMinimum => 0;
+public decimal FieldMaximum => 100;
 ```
 
 ## Decimal places
-`UINumericAttribute` allows to set a decimal places of value both through the `DecimalPlaces` property as a constant value and `DecimalPlacesProperty` property as a bound value.
+Decimal places parameter can be set as:
+* constant value using `DecimalPlaces` property
 
-### Constant decimal place value example
 ```csharp
 [UINumeric(DecimalPlaces = 2)]
 public decimal Field { get; set; }
 ```
 
-### Dynamic decimal place value example
+* dynamic value using binding with `DecimalPlacesProperty` property.
+
 ```csharp
 [UINumeric(DecimalPlacesProperty = nameof(DecimalPlace))]
 public decimal Field { get; set; }
 public decimal DecimalPlace => 2;
 ```
 
-## View type
-Numeric value can be presented both as standard numeric edit field and as a track bar. To use a special view type set the `ViewType` property of `UINumericAttribute`to value `UINumericViewType.TrackBar`.
-
-### TrackBar view example
-```csharp
-[UINumeric(ViewType = UINumericViewType.TrackBar, Minimum = 0, Maximum = 100)]
-public decimal Field { get; set; }
-```
-
 ## Unit
-Numeric value can be displayed with unit. It can be set by either as constant value (`Unit`) or bind with property (`UnitProperty`) or using a 
-custom class, which implements `IDisplayProvider` interface.
 
-### Constant unit value example
+Unit parameter can be set as:
+* constant value using `Unit` property
+
 ```csharp
 [UINumeric(Unit = "USD")]
 public decimal Field { get; set; }
 ```
 
-### Dynamic unit value example
+* dynamic value using binding with `UnitProperty` property.
+
 ```csharp
 [UINumeric(UnitProperty = nameof(Unit))]
 public decimal Field { get; set; }
 public string Unit { get; set; }
 ```
 
-### Unit display provider example
+## View type
+
+|` ViewType`    | Description | 
+| ------------- |:------------- 
+| `Default` | Specifies that a control is a standard numeric edit field. |
+| `TrackBar` | Specifies that a control is a track bar. |
+
+**Note:** The default is `ViewType.Default`.
+
 ```csharp
-[UINumeric(UnitDisplayProviderType = typeof(DisplayProvider))]
+[UINumeric(ViewType = UINumericViewType.TrackBar, Minimum = 0, Maximum = 100)]
 public decimal Field { get; set; }
-
-
-private class DisplayProvider : IDisplayProvider
-{
-    public string GetName(object obj)
-    {
-        return obj is int ? string.Format("U{0}", obj) : null;
-    }
-    public string GetShortName(object obj) => null;
-    public string GetDescription(object obj) => null;
-}
 ```

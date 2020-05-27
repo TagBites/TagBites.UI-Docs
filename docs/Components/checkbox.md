@@ -1,11 +1,11 @@
 # CheckBox
 
-A checkbox field is implemented for `public` property of `bool` type and nullable variant with `UILayoutAttribute` attribute.
+**Type recognition:** `char`, `char?`
 
+**Behavior control attribute:**  None
+
+### Example
 ```csharp
 [UILayout]
 public bool Boolean { get; set; }
-
-[UILayout]
-public bool? NullableBoolean { get; set; }
 ```

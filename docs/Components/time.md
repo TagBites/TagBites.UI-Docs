@@ -1,63 +1,63 @@
 # Time
 
-A time field is implemented for `public` property of `TimeSpan` type and nullable variant with `UILayoutAttribute` attribute.
+**Types automatically recognized:** `TimeSpan` and `TimeSpan?`
 
+**Behavior control attribute:**  `UITimeSpanAttribute`
+
+### Example
 ```csharp
 [UILayout]
 public TimeSpan TimeSpan { get; set; }
-
-[UILayout]
-public TimeSpan? NullableTimeSpan { get; set; }
 ```
 
-To customize text field with settings like e.g. minimum or maximum value the property requires `UITimeSpanAttribute` attribute.
+## Parameters setting
 
-**Note:** The `UILayoutAttribute` attribute is not required if property has the `UITimeSpanAttribute` attribute, unless it defines location of a field (e.g. row and column).
+| Parameter | `UITimeSpanAttribute` property | 
+| -----------|:------------- 
+| Time span type | `TimeSpanType` |
+| Precision | `Precision` |
 
 
 ## Time span type
-`UITimeSpanAttribute` requires setting the time span type with `UITimeSpanType`.
 
-| UITimeSpanType    | Description           | 
+| `UITimeSpanType` | Description | 
 | ------------- |:------------- 
 | `PositiveOrNegative` | Specifies whether a time span is positive or negative. |
-| `Positive` | specifies  Positive `TimeSpan` |
-| `TimeOfDay` | Specifies a timespan Time of day format  |
+| `Positive` | Specifies positive `TimeSpan`. |
+| `TimeOfDay` | Specifies time of day format. |
 
-### Example
 ```csharp
 [UITimeSpan(UITimeSpanType.PositiveOrNegative)]
-public TimeSpan TimeOfDay { get; set; }
+public TimeSpan PositiveOrNegative { get; set; }
 
 [UITimeSpan(UITimeSpanType.Positive)]
-public TimeSpan TimeOfDayWithMinutes { get; set; }
+public TimeSpan Positive { get; set; }
 
 [UITimeSpan(UITimeSpanType.TimeOfDay)]
-public TimeSpan TimeOfDayWithSeconds { get; set; }
+public TimeSpan TimeOfDay { get; set; }
 ```
 
 ## Precision
-`UITimeSpanAttribute` allows to define precision of `TimeSpan`.
-The default is `UITimeSpanPrecision.Minutes`.
 
-| UITimeSpanPrecision | Description | 
+| `UITimeSpanPrecision` | Description | 
 | ------------- |:------------- 
-| `Milliseconds` | Milliseconds precision |
-| `Seconds` | Seconds precision |
-| `Minutes` | Minutes precision |
-| `Hours` | Hours precision|
+| `Milliseconds` | Specifies that value is in milliseconds precision. |
+| `Seconds` | Specifies that value is in seconds precision. |
+| `Minutes` | Specifies that value is in minutes precision. |
+| `Hours` | Specifies that value is in hours precision. |
 
-### Example
+**Note:** The default is `UITimeSpanPrecision.Minutes`.
+
 ```csharp
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Milliseconds)]
 public TimeSpan TimeOfDay { get; set; }
 
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Seconds)]
-public TimeSpan TimeOfDayWithMinutes { get; set; }
+public TimeSpan TimeOfDayWithSeconds { get; set; }
 
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Minutes)]
-public TimeSpan TimeOfDayWithSeconds { get; set; }
+public TimeSpan TimeOfDayWithMinutes { get; set; }
 
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Hours)]
-public TimeSpan TimeOfDayWithSeconds { get; set; }
+public TimeSpan TimeOfDayWithHours { get; set; }
 ```
