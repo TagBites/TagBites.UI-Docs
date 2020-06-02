@@ -1,8 +1,12 @@
 # Time
 
-**Types automatically recognized:** `TimeSpan` and `TimeSpan?`
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  `UITimeSpanAttribute`
+
+**Types automatically recognized:** `TimeSpan` and `TimeSpan?`
+
+**Acceptable types**: `TimeSpan` and `TimeSpan?`
 
 ### Example
 ```csharp

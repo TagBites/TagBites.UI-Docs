@@ -1,8 +1,12 @@
 # Button
 
-**Types automatically recognized:** None
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  `UIButtonAttribute`
+
+**Types automatically recognized:** None
+
+**Acceptable types**: `string`, `Action`, `Func<Task>`, `Task`, `Task<IUICommandResult>,` `object`.
 
 ###  Example
 ```csharp
@@ -10,9 +14,7 @@
 public string ButtonField { get; set; }
 ```
 
-**Note:** A button can be connected with command or link.
-
-## Command button
+## `String` type - command button
 The value of property with `UIButtonAttribute` attribute is set to a name of method with `UICommandAttribute` attribute.
 
 **Note:** Button can be connected with synchronous and asynchronous action.
@@ -52,7 +54,41 @@ public void CommandAction1()
 public void CommandAction2() { /*action*/ }
 ```
 
-## Link
+## `Action` type
+
+```csharp
+[UILayout]
+public Action Action => () { /*action*/ }
+```
+
+## `Func<Task>` type
+
+```csharp
+[UILayout]
+public Func<Task> Task => async () =>
+{
+    await Task.Delay(500);
+}
+```
+
+## `Task` type
+
+A method returning `Task` should has the `UICommandAttribute`.
+
+```csharp
+[UICommand]
+public async Task Delay()
+{
+    await Task.Delay(100);
+}
+```
+## `Task<IUICommandResult>` type
+
+// TODO
+
+
+
+## `Object` type - link
 The value of property with `UIButtonAttribute` attribute is set to a link.
 
 ```csharp

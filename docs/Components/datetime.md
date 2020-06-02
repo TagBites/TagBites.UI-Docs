@@ -1,8 +1,12 @@
 # DateTime
 
-**Types automatically recognized:** `DateTime` and `DateTime?`
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  `UIDateTimeAttribute`
+
+**Types automatically recognized:** `DateTime` and `DateTime?`
+
+**Acceptable types**: `DateTime` and `DateTime?`
 
 ### Example
 ```csharp

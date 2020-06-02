@@ -1,8 +1,12 @@
 # Numeric
 
-**Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  `UINumericAttribute`
+
+**Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
+
+**Acceptable types**: Any type, if the parse fails, the default value is set.
 
 ###  Example
 ```csharp
@@ -19,6 +23,8 @@ public decimal Decimal { get; set; }
 | Decimal places | `DecimalPlaces` or `DecimalPlacesProperty` |
 | Unit | `Unit` or `UnitProperty` |
 | View type | `ViewType` |
+
+**Properties automatically recognized with suffix:** `Minimum`, `Maximum`, `DecimalPlaces`, `Unit`
 
 ##  Minimum and maximum
 Minimum and maximum parameters can be set as:

@@ -1,8 +1,12 @@
 # Combobox
 
-**Types automatically recognized:** None
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  `UIDictionaryAttribute`
+
+**Types automatically recognized:** None
+
+**Acceptable types**: `object`, `IEnumerable` implementations
 
 ###  Example
 ```csharp

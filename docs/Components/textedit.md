@@ -1,8 +1,12 @@
-# Text field
+# Text edit
+
+**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
+
+**Behavior control attribute:**  `UIStringAttribute`
 
 **Types automatically recognized:** `string`
 
-**Behavior control attribute:**  `UIStringAttribute`
+**Acceptable types**: `string`
 
 ###  Example
 ```csharp

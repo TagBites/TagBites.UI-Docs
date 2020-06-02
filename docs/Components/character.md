@@ -1,16 +1,15 @@
-# CheckBox
+# Character
 
 **Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  None
 
-**Types automatically recognized:** `bool`, `bool?`
+**Types automatically recognized:** `char`, `char?`.
 
-**Acceptable types**: `bool`, `bool?`.
+**Acceptable types**: `char`, `char?`.
 
 ### Example
-
 ```csharp
 [UILayout]
-public bool Boolean { get; set; }
+public char Character { get; set; }
 ```
