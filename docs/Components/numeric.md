@@ -1,7 +1,5 @@
 # Numeric
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UINumericAttribute`
 
 **Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
@@ -92,3 +90,10 @@ public string Unit { get; set; }
 [UINumeric(ViewType = UINumericViewType.TrackBar, Minimum = 0, Maximum = 100)]
 public decimal Field { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

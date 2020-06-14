@@ -1,8 +1,6 @@
 # Crumb bar
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
-**Behavior control attribute:**  `UICrumbBarttribute`
+**Behavior control attribute:**  `UICrumbBarAttribute`
 
 **Types automatically recognized:** None
 
@@ -18,7 +16,26 @@ public object CrumbBar { get; set; }
 
 | Parameter | `UIDateTimeAttribute` property | 
 | -----------|:------------- 
-| Caption | `Caption` |
-| Link | `Link` |
+| Display | `DisplayMember` |
+| Link | `LinkMember` |
 
-// TODO
+## Display
+
+```csharp
+[UICrumbBar("DisplayName")]
+public object CrumbBar { get; set; }
+```
+
+## Link
+
+```csharp
+[UICrumbBar("DisplayName", "Link")]
+public object CrumbBar { get; set; }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

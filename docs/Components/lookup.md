@@ -1,7 +1,5 @@
 # Look up 
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UILookupAttribute`
 
 **Types automatically recognized:** None
@@ -10,7 +8,7 @@
 
 ###  Example
 ```csharp
-[UILookup(typeof(SelectModel))]
+[UILookup]
 public object Field { get; set; }
 ```
 
@@ -18,8 +16,62 @@ public object Field { get; set; }
 
 | Parameter | `UIDateTimeAttribute` property | 
 | -----------|:------------- 
-| Item lookup | `ItemLookupProperty` |
-| Item lookup type | `ItemLookupType` |
-| Value and display values  | `ValueMember` and `DisplayMember`|
+| Item look up type | `ItemLookupType` |
+| Item look up property | `ItemLookupProperty` |
+| Value  | `ValueMember`|
+| Display | `DisplayMember` or `DisplayProviderType`|
 
-// TODO
+## Item look up type
+
+```csharp
+[UILookup(typeof(ItemLookup))]
+public object Field { get; set; }
+
+private class ItemLookup : IItemLookup 
+{ /* Implementations */ }
+```
+
+## Item look up property
+
+```csharp
+[UILookup(nameof(ItemLookupProvider))]
+public object Field { get; set; }
+public ItemLookup ItemLookupProvider { get; set; }
+
+private class ItemLookup : IItemLookup 
+{ /* Implementations */ }
+```
+
+## Value
+
+```csharp
+[UILookup(ValueMember = "Value")]
+public object Field { get; set; }
+```
+
+## Display
+
+Display parameter can be set as:
+* dynamic value using binding with `DisplayMember` property.
+
+```csharp
+[UILookup(DisplayMember = "Display")]
+public object Field { get; set; }
+```
+
+* provider, which implements `IDisplayNameProvider` interface, using `DisplayProviderType` property.
+
+```csharp
+[UILookup(DisplayProviderType = typeof(DisplayProvider))]
+public string Field { get; set; }
+
+private class DisplayProvider : IDisplayProvider 
+{ /* Implementations */ }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

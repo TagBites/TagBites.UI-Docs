@@ -1,12 +1,10 @@
 # Button
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIButtonAttribute`
 
 **Types automatically recognized:** None
 
-**Acceptable types**: `string`, `Action`, `Func<Task>`, `Task`, `Task<IUICommandResult>,` `object`.
+**Acceptable types**: `string`, `Action`, `Func<Task>`, `Task`, `Task<IUICommandResult>,` `object`
 
 ###  Example
 ```csharp
@@ -84,9 +82,13 @@ public async Task Delay()
 ```
 ## `Task<IUICommandResult>` type
 
-// TODO
-
-
+```csharp
+[UICommand]
+public async Task<IUICommandResult> Delay()
+{
+    return UICommandResult.Success("Example message.");
+}
+```
 
 ## `Object` type - link
 The value of property with `UIButtonAttribute` attribute is set to a link.
@@ -103,3 +105,10 @@ public object Link => "https://tagbites.com";
 [UIIcon(MaterialIcons.Call)]
 public string CommandName { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

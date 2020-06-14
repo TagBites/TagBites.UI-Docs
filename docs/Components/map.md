@@ -1,7 +1,5 @@
 # Map
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIMapAttribute`
 
 **Types automatically recognized:** None
@@ -21,4 +19,16 @@ public object Map { get; set; }
 | -----------|:------------- 
 | Show user location | `ShowUserLocation` |
 
-// TODO
+## Show user location 
+
+```csharp
+[UIMap(ShowUserLocation = true)]
+public object Map { get; set; }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

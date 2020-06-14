@@ -1,7 +1,5 @@
 # Image
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIImageAttribute`
 
 **Types automatically recognized:** None
@@ -20,8 +18,32 @@ public object Image { get; set; }
 | -----------|:------------- 
 | Width and height | `Width` and `Height` |
 
-// TODO
+## Width and height
+```csharp
+[UIImage(Height = 200, Width = 200)]
+public object Image { get; set; }
+```
 
-## `UIUrlImage`
-## `UIResourceImage`
-## enum with `UIIconFontResource` attribute
+## Using `UIUrlImage`, `UIResourceImage`, enum with `UIIconFontResource` types
+
+```csharp
+[UIImage]
+public object UrlImage { get; } = new UIUrlImage("https://www.tagbites.com/images/favicon.png");
+```
+
+```csharp
+[UIImage]
+public object ResourceImage { get; } = new UIResourceImage(typeof(LoginExample), "TagBites.UI.Demo.Resources.Images.logo.png");
+```
+
+```csharp
+[UIImage]
+public object IconImage { get; } = MaterialIcons.Watch;
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

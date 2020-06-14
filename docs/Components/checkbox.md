@@ -1,12 +1,11 @@
 # CheckBox
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
 
 **Behavior control attribute:**  None
 
 **Types automatically recognized:** `bool`, `bool?`
 
-**Acceptable types**: `bool`, `bool?`.
+**Acceptable types**: `bool`, `bool?`
 
 ### Example
 
@@ -14,3 +13,10 @@
 [UILayout]
 public bool Boolean { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

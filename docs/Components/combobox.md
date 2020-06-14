@@ -1,7 +1,5 @@
 # Combobox
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIDictionaryAttribute`
 
 **Types automatically recognized:** None
@@ -78,3 +76,10 @@ A control can be used in token mode if property `Tokens` is set to **true**.
 public string Field { get; set; }
 public object FieldDataSource { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

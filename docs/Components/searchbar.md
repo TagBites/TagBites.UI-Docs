@@ -1,12 +1,10 @@
-# Progress
-
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
+# Search bar
 
 **Behavior control attribute:**  `UISearchAttribute`
 
 **Types automatically recognized:** None
 
-**Acceptable types**: Any type
+**Acceptable types**: `object`, `string`
 
 ###  Example
 ```csharp
@@ -20,4 +18,18 @@ public object SearchField { get; set; }
 | -----------|:------------- 
 | Progress | `ProgressProperty` |
 
-// TODO
+## Progress
+
+```csharp
+[UISearch(ProgressProperty = nameof(Progress))]
+public object SearchField { get; set; }
+public double Progress { get; set; }
+```
+
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

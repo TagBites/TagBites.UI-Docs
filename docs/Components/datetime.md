@@ -1,7 +1,5 @@
 # DateTime
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIDateTimeAttribute`
 
 **Types automatically recognized:** `DateTime` and `DateTime?`
@@ -40,3 +38,10 @@ public DateTime Date { get; set; }
 [UIDateTime(UIDateTimeType.Month)]
 public DateTime Month { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

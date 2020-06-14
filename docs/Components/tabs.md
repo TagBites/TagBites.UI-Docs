@@ -1,6 +1,4 @@
-# CheckBox
-
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
+# Tabs
 
 **Behavior control attribute:**  `UITabsAttribute`
 
@@ -11,13 +9,26 @@
 ### Example
 ```csharp
 [UITabs]
-public IList<object> Tabs { get; }
+public object Tabs { get; }
 ```
 
 ## Parameters setting
 | Parameter | `UITabsAttribute` property | 
 | -----------|:------------- 
 | Active view | `ActiveViewProperty` |
-| Id and view members  | `IdMember` and `ViewMember` |
 
-// TODO
+**Note:** `UITabsAttribute` inherits from `UISectionsAttribute`.
+
+## Active view
+```csharp
+[UITabs(ActiveViewProperty = nameof(ActiveTab))]
+public object Tabs { get; }
+public object ActiveTab { get; set; }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

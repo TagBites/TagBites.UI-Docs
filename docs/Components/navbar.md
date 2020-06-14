@@ -1,7 +1,5 @@
 # Navbar
 
-**Supported platforms**: Web (Blazor), Windows (WinForms)
-
 **Behavior control attribute:**  `UINavBarAttribute`
 
 **Types automatically recognized:** None
@@ -20,7 +18,7 @@ public object NavBars { get; set; }
 | -----------|:------------- 
 | Item group | `ItemGroupMember` |
 | Item icon | `ItemIconMember` |
-| Item Display | `ItemDisplayMember` |
+| Item display | `ItemDisplayMember` |
 | Item link | `ItemLinkMember` |
 | Group source | `GroupSourceProperty` |
 | Group id | `GroupIdMember` |
@@ -28,4 +26,67 @@ public object NavBars { get; set; }
 | Group display | `GroupDisplayMember` |
 | Active item | `ActiveItemProperty` |
 
-// TODO
+## Item group
+
+```csharp
+[UINavBar("GroupId")]
+public object NavBars { get; set; }
+```
+
+## Item icon
+
+```csharp
+[UINavBar(ItemIconMember = "ItemIcon")]
+public object NavBars { get; set; }
+```
+
+## Item display
+
+```csharp
+[UINavBar(ItemDisplayMember = "ItemDisplay")]
+public object NavBars { get; set; }
+```
+
+## Item link 
+
+```csharp
+[UINavBar(ItemLinkMember = "ItemLink")]
+public object NavBars { get; set; }
+```
+
+## Group source and Group id
+
+```csharp
+[UINavBar("ItemGroupId", nameof(Groups), "GroupId")]
+public object NavBars { get; set; }
+public object Groups { get; set; }
+```
+
+## Group icon
+
+```csharp
+[UINavBar(GroupIconMember = "GroupIcon")]
+public object NavBars { get; set; }
+```
+
+## Group display
+
+```csharp
+[UINavBar(GroupDisplayMember = "GroupDisplay")]
+public object NavBars { get; set; }
+```
+
+## Active item
+
+```csharp
+[UINavBar(ActiveItemProperty = nameof(ActiveItem))]
+public object NavBars { get; set; }
+public object ActiveItem { get; set; }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) ||
+| iOS(Xamarin.Forms), Windows (WinForms) ||
+| Windows (WinForms) | &check; |

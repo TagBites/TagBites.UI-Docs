@@ -1,7 +1,5 @@
 # Time
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UITimeSpanAttribute`
 
 **Types automatically recognized:** `TimeSpan` and `TimeSpan?`
@@ -65,3 +63,10 @@ public TimeSpan TimeOfDayWithMinutes { get; set; }
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Hours)]
 public TimeSpan TimeOfDayWithHours { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

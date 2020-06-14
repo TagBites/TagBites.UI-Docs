@@ -1,7 +1,5 @@
 # Text edit
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UIStringAttribute`
 
 **Types automatically recognized:** `string`
@@ -98,3 +96,10 @@ public string TextCenter { get; set; }
 [UIString(HorizontalAlignment = UIStringAlignment.Far)]
 public string TextFar { get; set; }
 ```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

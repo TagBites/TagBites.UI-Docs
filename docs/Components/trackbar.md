@@ -1,7 +1,5 @@
 # Track bar
 
-**Supported platforms**: Web (Blazor), Android (Xamarin.Forms), iOS(Xamarin.Forms), Windows (WinForms)
-
 **Behavior control attribute:**  `UINumericAttribute`
 
 **Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
@@ -15,3 +13,10 @@ public decimal Field { get; set; }
 ```
 
 **Note:** TrackBar is a numeric with a `ViewType` property set to `UINumericViewType.TrackBar` value.
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) | &check; |
+| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| Windows (WinForms) | &check; |

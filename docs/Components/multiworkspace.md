@@ -1,7 +1,5 @@
 # Multi workspace
 
-**Supported platforms**: Windows (WinForms)
-
 **Behavior control attribute:**  `UIMultiWorkspaceAttribute`
 
 **Types automatically recognized:** None
@@ -21,7 +19,24 @@ public object Workspaces { get; set; }
 | Active workspace | `ActiveWorkspaceProperty` |
 | Id member | `IdMember` |
 
-// TODO
-
 ## Active workspace
+
+```csharp
+[UIMultiWorkspace(nameof(ActiveWorkspace))]
+public object Workspaces { get; set; }
+public object ActiveWorkspace { get; set; }
+```
+
 ## Id member
+
+```csharp
+[UIMultiWorkspace(IdMember = "IdMember")]
+public object Workspaces { get; set; }
+```
+
+| Platform | Support | 
+| -----------|:-------------:| 
+| Web (Blazor) | &check; |
+| Android (Xamarin.Forms) ||
+| iOS(Xamarin.Forms), Windows (WinForms) ||
+| Windows (WinForms) | &check; |
