@@ -1,4 +1,4 @@
-# Section
+# Sections
 
 **Behavior control attribute:**  `UISectionsAttribute`
 

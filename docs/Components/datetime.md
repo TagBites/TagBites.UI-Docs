@@ -1,4 +1,4 @@
-# DateTime
+# Date time
 
 **Behavior control attribute:**  `UIDateTimeAttribute`
 
