@@ -88,5 +88,5 @@ public object ActiveItem { get; set; }
 | -----------|:-------------:| 
 | Web (Blazor) | &check; |
 | Android (Xamarin.Forms) ||
-| iOS(Xamarin.Forms), Windows (WinForms) ||
+| iOS (Xamarin.Forms) ||
 | Windows (WinForms) | &check; |

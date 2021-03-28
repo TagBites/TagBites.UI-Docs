@@ -73,5 +73,5 @@ private class DisplayProvider : IDisplayProvider
 | -----------|:-------------:| 
 | Web (Blazor) | &check; |
 | Android (Xamarin.Forms) | &check; |
-| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| iOS (Xamarin.Forms) | &check; |
 | Windows (WinForms) | &check; |

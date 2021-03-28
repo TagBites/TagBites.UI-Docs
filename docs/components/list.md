@@ -17,8 +17,8 @@ public object Field { get; set; }
 | Parameter | `UIListAttribute` property | 
 | -----------|:------------- 
 | View type | `ViewType` |
-| ReadOnly | `ReadOnly` |
-| Editable | `Editable` |
+| Read only | `ReadOnly` or `ReadOnlyProperty` |
+| Editable | `Editable` or `EditableProperty` |
 | Show menu | `ShowMenu` |
 | Show find | `ShowFind` |
 | Show details | `ShowDetails` |
@@ -48,18 +48,38 @@ public object Field { get; set; }
 public object Field { get; set; }
 ```
 
-## ReadOnly
+## Read only
+Read only parameter can be set as:
+* constant values using `ReadOnly` property
 
 ```csharp
-[UIList(Readonly = true)]
+[UIList(ReadOnly = true)]
 public object Field { get; set; }
 ```
 
+* dynamic value using binding with `ReadOnlyProperty`:
+
+```csharp
+[UIList(ReadOnlyProperty = nameof(FieldReadOnly))]
+public object Field { get; set; }
+public bool FieldReadOnly { get ;set; }
+```
+
 ## Editable
+Editable parameter can be set as:
+* constant values using `Editable` property
 
 ```csharp
 [UIList(Editable = false)]
 public object Field { get; set; }
+```
+
+* dynamic value using binding with `EditableProperty`:
+
+```csharp
+[UIList(EditableProperty = nameof(FieldEditable))]
+public object Field { get; set; }
+public bool FieldEditable { get ;set; }
 ```
 
 **Note:** The default parameter value is `true`.
@@ -190,5 +210,5 @@ public void Enter() => { /*action*/ }
 | -----------|:-------------:| 
 | Web (Blazor) | &check; |
 | Android (Xamarin.Forms) | &check; |
-| iOS(Xamarin.Forms), Windows (WinForms) | &check; |
+| iOS (Xamarin.Forms) | &check; |
 | Windows (WinForms) | &check; |
