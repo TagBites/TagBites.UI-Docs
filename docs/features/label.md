@@ -16,7 +16,6 @@ public string Text { get ;set }
 | Parameter | `UILabelAttribute` property | 
 | -----------|:------------- 
 | Text | `Text` or `TextProperty` |
-| Link | `Link` or `LinkProperty` or `LinkCommandName` or `LinkProviderType` |
 | Color | `Color` or `ColorProperty` |
 | Show | `Show` |
 
@@ -37,45 +36,6 @@ public string Label { get; set; }
 [UILabel(TextProperty = nameof(LabelText))]
 public string Label { get; set; }
 public string LabelText { get; set; }
-```
-
-## Link
-
-Link parameter can be set with:
-
-* constant value using `Link` property
-
-```csharp
-[UILabel(Link = "www.tagbites.com")]
-public string Label { get; set; }
-```
-
-* dynamic value using binding with `LinkProperty` property
-
-```csharp
-[UILabel(LinkProperty = nameof(LabelLink))]
-public string Label { get; set; }
-public string LabelLink { get; set; }
-```
-
-* command which should be executed on click
-
-```csharp
-[UILabel(LinkCommandName = nameof(LinkCommand))]
-public string Label { get; set; }
-
-[UICommand]
-public void LinkCommand() { /* action */ }
-```
-
-* provider, which implements `ILinkProvider` interface, using `LinkProviderType` property.
-
-```csharp
-[UILabel(LinkProviderType = typeof(LinkProvider))]
-public string Label { get; set; }
-
-private class LinkProvider : ILinkProvider 
-{ /* Implementations */ }
 ```
 
 ## Color

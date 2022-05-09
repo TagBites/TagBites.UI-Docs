@@ -25,6 +25,8 @@ public object NavBars { get; set; }
 | Group icon | `GroupIconMember` |
 | Group display | `GroupDisplayMember` |
 | Active item | `ActiveItemProperty` |
+| Is find field shown | `ShowFind` |
+| Enter command | `EnterCommand` |
 
 ## Item group
 
@@ -82,6 +84,25 @@ public object NavBars { get; set; }
 [UINavBar(ActiveItemProperty = nameof(ActiveItem))]
 public object NavBars { get; set; }
 public object ActiveItem { get; set; }
+```
+
+## Is find field shown
+
+```csharp
+[UINavBar(ShowFind = false)]
+public object NavBars { get; set; }
+```
+
+**Note:** The default is `true`.
+
+## Enter command
+
+```csharp
+[UINavBar(EnterCommand = nameof(Enter))]
+public object Field { get; set; }
+
+[UICommand]
+public void Enter() => { /*action*/ }
 ```
 
 | Platform | Support | 

@@ -17,8 +17,8 @@ public string Field { get; set; }
 | Parameter | `UINumericAttribute` property | 
 | -----------|:------------- 
 | Source type | `SourceType` |
-| Url | `BaseUrl` or `BaseUrlProperty` |
 | Script | `ScriptObjectProperty` |
+| Url | `BaseUrl` or `BaseUrlProperty` |
 | Allow navigation | `AllowNavigation` |
 
 ## Source type
@@ -34,6 +34,14 @@ public string Field { get; set; }
 ```csharp
 [UIWebSource(UIWebSourceType.Content)]
 public string WebSource { get; set; }
+```
+
+## Script
+
+```csharp
+[UIWebSource(ScriptObjectProperty = nameof(ScriptObject))]
+public string WebSource { get; set; }
+public string ScriptObject { get; set; }
 ```
 
 ## Url
@@ -53,14 +61,6 @@ public string WebSource { get; set; }
 public string WebSource { get; set; }
 public string Url {get; set;}
 ```
-
-```csharp
-[UIWebSource(ScriptObjectProperty = nameof(ScriptObject))]
-public string WebSource { get; set; }
-public string ScriptObject { get; set; }
-```
-
-## Script
 
 ```csharp
 [UIWebSource(ScriptObjectProperty = nameof(ScriptObject))]

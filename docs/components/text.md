@@ -16,8 +16,23 @@ public string Text { get; set; }
 
 | Parameter | `UITextAttribute` property | 
 | -----------|:------------- 
+| View type | `ViewType` |
 | Horizontal alignment | `HorizontalAlignment` |
 | Vertical alignment | `VerticalAlignment` |
+
+## View type
+
+|` ViewType`    | Description | 
+| ------------- |:------------- 
+| `Default` | Specifies that a control is a standard text edit field. |
+| `Badge` | Specifies that a control is a badge. |
+
+**Note:** The default is `UITextViewType.Default`.
+
+```csharp
+[UIText(ViewType = UITextViewType.Badge)]
+public string Field { get; set; }
+```
 
 ## Horizontal alignment
 

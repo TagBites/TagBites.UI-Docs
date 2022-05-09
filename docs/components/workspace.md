@@ -29,7 +29,7 @@ public object Field { get; set; }
 |` UIWorkspaceViewType`    | Description | 
 | ------------- |:------------- 
 | `Tabbed` | Specifies that a workspace is tabbed view. |
-| `Widget` | Specifies that a workspace is widget view.|
+| `Widget` | Specifies that a workspace is widget view. |
 
 **Note:** The default is `UIWorkspaceViewType.Tabbed`.
 

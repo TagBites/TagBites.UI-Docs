@@ -17,10 +17,11 @@ public string Text { get; set; }
 | Parameter | `UIStringAttribute` property | 
 | -----------|:------------- 
 | String type | `UIStringType` |
+| Code syntax | `CodeSyntax` |
 | Maximum length | `MaximumLength` |
 | Minimum line count | `MinimumLineCount` |
 | Maximum line count | `MaximumLineCount` |
-| Horizontal alignment | `HorizontalAlignment` |
+| Horizontal alignment | `Alignment` |
 
 
 ## String type
@@ -60,6 +61,12 @@ public string Telephone { get; set; }
 public string Url { get; set; }
 ```
 
+## Code syntax
+```csharp
+[UIString(UIStringType.Code, CodeSyntax = "csharp")]
+public string Text { get; set; }
+```
+
 ## Maximum length
 ```csharp
 [UIString(MaximumLength = 10)]
@@ -74,27 +81,23 @@ public string Text { get; set; }
 
 ## Horizontal alignment
 
-| HorizontalAlignment | Description | 
+| Alignment | Description | 
 | ------------- |:------------- 
-| `Default`     | Specifies that a text is aligned in the default way. |
-| `Near`     | Specifies that a text is aligned near the layout. In a left-to-right layout, the near position is left. In a right-to-left layout, the near position is right. |
+| `Start`     | Specifies that a text is aligned near the layout. In a left-to-right layout, the near position is left. In a right-to-left layout, the near position is right. |
 | `Center`     | Specifies that a text is aligned in the center. |
-| `Far`     | Specifies that a text is aligned far from the origin position of the layout rectangle. In a left-to-right layout, the far position is right. In a right-to-left layout, the far position is left. |
+| `End`     | Specifies that a text is aligned far from the origin position of the layout rectangle. In a left-to-right layout, the far position is right. In a right-to-left layout, the far position is left. |
 
-**Note:** The default is `UIStringAttribute.Default`.
+**Note:** The default is `UIAlignment.Start`.
 
 ```csharp
-[UIString(HorizontalAlignment = UIStringAlignment.Default)]
-public string TextDefault { get; set; }
-
-[UIString(HorizontalAlignment = UIStringAlignment.Near)]
-public string TextNear { get; set; }
+[UIString(HorizontalAlignment = UIStringAlignment.Start)]
+public string TextStart { get; set; }
 
 [UIString(HorizontalAlignment = UIStringAlignment.Center)]
 public string TextCenter { get; set; }
 
-[UIString(HorizontalAlignment = UIStringAlignment.Far)]
-public string TextFar { get; set; }
+[UIString(HorizontalAlignment = UIStringAlignment.End)]
+public string TextEnd { get; set; }
 ```
 
 | Platform | Support | 

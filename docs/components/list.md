@@ -17,6 +17,7 @@ public object Field { get; set; }
 | Parameter | `UIListAttribute` property | 
 | -----------|:------------- 
 | View type | `ViewType` |
+| Allow sorting | `AllowSorting` |
 | Read only | `ReadOnly` or `ReadOnlyProperty` |
 | Editable | `Editable` or `EditableProperty` |
 | Show menu | `ShowMenu` |
@@ -28,6 +29,7 @@ public object Field { get; set; }
 | Find filter text | `FindFilterTextProperty` |
 | Focused row | `FocusedRowProperty` |
 | Selected rows | `SelectedRowsProperty` |
+| Filters view | `FiltersViewProperty` |
 | Add command | `AddCommand` |
 | Add child command | `AddChildCommand` |
 | Delete command | `DeleteCommand` |
@@ -47,6 +49,15 @@ public object Field { get; set; }
 [UIList(UIListViewType.ListView)]
 public object Field { get; set; }
 ```
+
+## Allow sorting
+
+```csharp
+[UIList(AllowSorting = false)]
+public object Field { get; set; }
+```
+
+**Note:** The default parameter value is `true`.
 
 ## Read only
 Read only parameter can be set as:
@@ -164,6 +175,15 @@ public object FocusedRow { get; set; }
 public object Field { get; set; }
 public IList SelectedRows { get; set; }
 ```
+
+##  Filters view
+
+```csharp
+[UIList(FiltersViewProperty = nameof(ItemsFilters))]
+public object Field { get; set; }
+public object ItemsFilters { get; set; }
+```
+
 
 ## Add command
 

@@ -20,8 +20,7 @@ public object FieldDataSource { get; }
 | Data source | `DataSourceProperty` |
 | Value and display values  | `ValueMember` and `DisplayMember`|
 | Custom display provider | `DisplayProviderType` |
-| Allow null | `AllowNull` |
-| Tokens| `Tokens` |
+| View type | `ViewType` |
 
 ## Data source
 
@@ -59,20 +58,17 @@ private class DisplayProvider : IDisplayProvider
 }
 ```
 
-## Allow null
-A control allows to clear a selected value using `AllowNull` property.
+## View type
+|` ViewType`    | Description | 
+| ------------- |:------------- 
+| `Default` | Specifies that a control is a standard combo box. |
+| `Tokens` | Specifies that a control is a tokens selector. |
+| `Buttons` | Specifies that a control is a radio buttons. |
+
+**Note:** The default is `UIDictionaryViewType.Default`.
 
 ```csharp
-[UIDictionary(nameof(FieldDataSource), AllowNull = true)]
-public int? Field { get; set; }
-public object FieldDataSource { get; }
-```
-
-## Tokens
-A control can be used in token mode if property `Tokens` is set to **true**.
-
-```csharp
-[UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value", Tokens = true)]
+[UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value", ViewType = UIDictionaryViewType.Tokens)]
 public string Field { get; set; }
 public object FieldDataSource { get; set; }
 ```

@@ -17,6 +17,7 @@ public object SearchField { get; set; }
 | Parameter | `UISearchAttribute` property | 
 | -----------|:------------- 
 | Progress | `ProgressProperty` |
+| Target control | `TargetProperty` |
 
 ## Progress
 
@@ -24,6 +25,14 @@ public object SearchField { get; set; }
 [UISearch(ProgressProperty = nameof(Progress))]
 public object SearchField { get; set; }
 public double Progress { get; set; }
+```
+
+## Target control
+
+```csharp
+[UISearch(TargetProperty = nameof(Items))]
+public object SearchField { get; set; }
+public object Items { get; set; }
 ```
 
 

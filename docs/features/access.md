@@ -2,7 +2,7 @@
 
 **Behavior control attribute:**  `UIAccessAttribute`
 
-**Usage**: property
+**Usage**: property or class
 
 ### Example
 
