@@ -1,28 +1,38 @@
 # Numeric
 
-**Behavior control attribute:**  `UINumericAttribute`
-
-**Types automatically recognized:** `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
-
-**Acceptable types**: Any type, if the parse fails, the default value is set.
-
 ###  Example
 ```csharp
 [UILayout]
 public decimal Decimal { get; set; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UINumericAttribute` property | 
-| -----------|:------------- 
-| Minimum | `Minimum` or `MinimumProperty` |
-| Maximum | `Maximum` or `MaximumMinimumProperty` |
-| Decimal places | `DecimalPlaces` or `DecimalPlacesProperty` |
-| Unit | `Unit` or `UnitProperty` |
-| View type | `ViewType` |
+Automatically recognized types: `byte`, `short`, `int`, `decimal`, `double` `float` and nullable variants (`byte?`, `short?`, `int?`, `decimal?`, `double?`, `float?`)
 
-**Properties automatically recognized with suffix:** `Minimum`, `Maximum`, `DecimalPlaces`, `Unit`
+Acceptable types: Any type, if the parse fails, the default value is set.
+
+## Related attribute
+
+`UINumericAttribute` - is related attribute.
+
+Properties:
+- `Minimum` - constant value providing minimum value.
+- `MinimumProperty`
+- `Maximum` - constant value providing maximum value.
+- `MaximumMinimumProperty`
+- `DecimalPlaces`- constant value providing decimal places.
+- `DecimalPlacesProperty`
+- `Unit` - constant value providing unit name.
+- `ViewType`
+
+## Related properties
+
+Automatically recognized suffixes are:
+- `Minimum`, 
+- `Maximum`, 
+- `DecimalPlaces`,
+- `Unit`
 
 ##  Minimum and maximum
 Minimum and maximum parameters can be set as:
@@ -46,18 +56,18 @@ public decimal FieldMaximum => 100;
 Decimal places parameter can be set as:
 * constant value using `DecimalPlaces` property
 
-```csharp
-[UINumeric(DecimalPlaces = 2)]
-public decimal Field { get; set; }
-```
+    ```csharp
+    [UINumeric(DecimalPlaces = 2)]
+    public decimal Field { get; set; }
+    ```
 
 * dynamic value using binding with `DecimalPlacesProperty` property.
 
-```csharp
-[UINumeric(DecimalPlacesProperty = nameof(DecimalPlace))]
-public decimal Field { get; set; }
-public decimal DecimalPlace => 2;
-```
+    ```csharp
+    [UINumeric(DecimalPlacesProperty = nameof(DecimalPlace))]
+    public decimal Field { get; set; }
+    public decimal DecimalPlace => 2;
+    ```
 
 ## Unit
 
@@ -90,10 +100,3 @@ public string Unit { get; set; }
 [UINumeric(ViewType = UINumericViewType.TrackBar, Minimum = 0, Maximum = 100)]
 public decimal Field { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

@@ -1,28 +1,26 @@
 # Text edit
 
-**Behavior control attribute:**  `UIStringAttribute`
-
-**Types automatically recognized:** `string`
-
-**Acceptable types**: `string`
-
 ###  Example
 ```csharp
 [UILayout]
 public string Text { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIStringAttribute` property | 
-| -----------|:------------- 
-| String type | `UIStringType` |
-| Code syntax | `CodeSyntax` |
-| Maximum length | `MaximumLength` |
-| Minimum line count | `MinimumLineCount` |
-| Maximum line count | `MaximumLineCount` |
-| Horizontal alignment | `Alignment` |
+Automatically recognized types: `string`
 
+Automatically recognized in a form and the use of the `UIString` attribute is NOT required.
+
+Acceptable types: `string`
+
+Properties:
+- `UIStringType`
+- `CodeSyntax`
+- `MaximumLength`
+- `MinimumLineCount`
+- `MaximumLineCount`
+- `Alignment`
 
 ## String type
 
@@ -99,10 +97,3 @@ public string TextCenter { get; set; }
 [UIString(HorizontalAlignment = UIStringAlignment.End)]
 public string TextEnd { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

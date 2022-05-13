@@ -1,22 +1,24 @@
 # Image
 
-**Behavior control attribute:**  `UIImageAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `UIUrlImage`, `UIResourceImage`, enum with `UIIconFontResource` attribute
-
 ### Example
 ```csharp
 [UIImage]
 public object Image { get; set; }
 ```
+## Value Type
 
-## Parameters setting
+No automatically recognized types, **attribute `UIImage` is required**.
 
-| Parameter | `UIDateTimeAttribute` property | 
-| -----------|:------------- 
-| Width and height | `Width` and `Height` |
+Acceptable types: `object`, `UIUrlImage`, `UIResourceImage`, enum with `UIIconFontResource` attribute
+
+## Related attribute
+
+`UIImage` - is related attribute.
+
+
+Properties:
+- `Width`
+- `Height`
 
 ## Width and height
 ```csharp
@@ -24,7 +26,9 @@ public object Image { get; set; }
 public object Image { get; set; }
 ```
 
-## Using `UIUrlImage`, `UIResourceImage`, enum with `UIIconFontResource` types
+## More examples
+
+### Using `UIUrlImage`, `UIResourceImage`, enum with `UIIconFontResource` types
 
 ```csharp
 [UIImage]
@@ -40,10 +44,3 @@ public object ResourceImage { get; } = new UIResourceImage(typeof(LoginExample),
 [UIImage]
 public object IconImage { get; } = MaterialIcons.Watch;
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

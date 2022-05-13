@@ -32,10 +32,3 @@ public object CrumbBar { get; set; }
 [UICrumbBar("DisplayName", "Link")]
 public object CrumbBar { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

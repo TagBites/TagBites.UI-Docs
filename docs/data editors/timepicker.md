@@ -1,10 +1,6 @@
-# Time
+# Time picker
 
-**Behavior control attribute:**  `UITimeSpanAttribute`
-
-**Types automatically recognized:** `TimeSpan` and `TimeSpan?`
-
-**Acceptable types**: `TimeSpan` and `TimeSpan?`
+A time picker lets users select a time.
 
 ### Example
 ```csharp
@@ -12,13 +8,19 @@
 public TimeSpan TimeSpan { get; set; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UITimeSpanAttribute` property | 
-| -----------|:------------- 
-| Time span type | `TimeSpanType` |
-| Precision | `Precision` |
+Automatically recognized in a form and the use of the `UITimeSpan` attribute is NOT required.
 
+Acceptable types: `TimeSpan` and `TimeSpan?`.
+
+## Related attribute
+
+`UITimeSpan` - is related attribute.
+
+Properties:
+- `TimeSpanType` - specifies the type of a time.
+- `Precision` - precision.
 
 ## Time span type
 
@@ -63,10 +65,3 @@ public TimeSpan TimeOfDayWithMinutes { get; set; }
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Hours)]
 public TimeSpan TimeOfDayWithHours { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

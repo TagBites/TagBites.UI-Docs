@@ -1,30 +1,29 @@
 # Combobox
 
-**Behavior control attribute:**  `UIDictionaryAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
+Represents a selection control with a drop-down list that can be displayed or hidden.
 
 ###  Example
+
 ```csharp
 [UIDictionary(nameof(FieldDataSource))]
 public string Field { get; set; }
 public object FieldDataSource { get; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UIStringAttribute` property | 
-| -----------|:------------- 
-| Data source | `DataSourceProperty` |
-| Value and display values  | `ValueMember` and `DisplayMember`|
-| Custom display provider | `DisplayProviderType` |
-| View type | `ViewType` |
+No automatically recognized types, **attribute `UIDictionary` is required**.
+
+Acceptable types: TODO
+
+Properties:
+- `DataSourceProperty` - allows to provide a collection, which is displayed in control and selected value is binding with property
+- `ValueMember` - key identifier
+- `DisplayMember` - display name identifier
+- `DisplayProviderType` - custom display provider
+- `ViewType`
 
 ## Data source
-
-Parameter allows to provide a collection, which is displayed in control and selected value is binding with property.
 
 ```csharp
 [UIDictionary(nameof(FieldDataSource))]
@@ -72,10 +71,3 @@ private class DisplayProvider : IDisplayProvider
 public string Field { get; set; }
 public object FieldDataSource { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

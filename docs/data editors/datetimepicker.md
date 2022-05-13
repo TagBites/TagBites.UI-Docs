@@ -1,22 +1,27 @@
-# Date time
+# Date time picker
 
-**Behavior control attribute:**  `UIDateTimeAttribute`
-
-**Types automatically recognized:** `DateTime` and `DateTime?`
-
-**Acceptable types**: `DateTime` and `DateTime?`
+A date time picker lets users select a date, date time or month.
 
 ### Example
+
 ```csharp
 [UILayout]
 public DateTime DateTime { get; set; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UIDateTimeAttribute` property | 
-| -----------|:------------- 
-| Date time type | `UIDateTimeType` |
+Automatically recognized in a form and the use of the `UIDateTime` attribute is NOT required.
+
+Acceptable types: `DateTime` and `DateTime?`.
+
+## Related attribute
+
+`UIDateTime` - is related attribute.
+
+Properties:
+- `UIDateTimeType` - specifies the type of a date time.
+
 
 ## Date time type
 
@@ -38,10 +43,3 @@ public DateTime Date { get; set; }
 [UIDateTime(UIDateTimeType.Month)]
 public DateTime Month { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

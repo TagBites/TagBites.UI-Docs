@@ -1,23 +1,24 @@
 # Search bar
 
-**Behavior control attribute:**  `UISearchAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `string`
-
 ###  Example
 ```csharp
 [UISearch]
 public object SearchField { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UISearchAttribute` property | 
-| -----------|:------------- 
-| Progress | `ProgressProperty` |
-| Target control | `TargetProperty` |
+No automatically recognized types, **attribute `UISearch` is required**.
+
+Acceptable types: `object`, `string`
+
+## Related attribute
+
+`UISearch` - is related attribute.
+
+Properties:
+- `ProgressProperty`
+- `TargetProperty`
 
 ## Progress
 
@@ -34,11 +35,3 @@ public double Progress { get; set; }
 public object SearchField { get; set; }
 public object Items { get; set; }
 ```
-
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

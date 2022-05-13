@@ -1,23 +1,26 @@
 # Static
 
-**Behavior control attribute:**  `UIStaticAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `string`
-
 ###  Example
 ```csharp
 [UIStatic]
 public string StaticField { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UITextAttribute` property | 
-| -----------|:------------- 
-| Text | `TextProperty` or `TextProviderType`  |
-| Link | `Link` or `LinkProperty` or `LinkCommandName` or`LinkProviderType` |
+No automatically recognized types, **attribute `UIStatic` is required**.
+
+## Related attribute
+
+`UIStatic` - is related attribute.
+
+Properties:
+- `TextProperty`
+- `TextProviderType`
+- `Link`
+- `LinkProperty`
+- `LinkCommandName`
+- `LinkProviderType`
 
 ## Text
 
@@ -79,10 +82,3 @@ public string Field { get; set; }
 private class LinkProvider : ILinkProvider 
 { /* Implementations */ }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

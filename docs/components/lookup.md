@@ -1,25 +1,27 @@
 # Look up 
 
-**Behavior control attribute:**  `UILookupAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: Any type
-
 ###  Example
 ```csharp
 [UILookup]
 public object Field { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIDateTimeAttribute` property | 
-| -----------|:------------- 
-| Item look up type | `ItemLookupType` |
-| Item look up property | `ItemLookupProperty` |
-| Value  | `ValueMember`|
-| Display | `DisplayMember` or `DisplayProviderType`|
+No automatically recognized types, **attribute `UILookup` is required**.
+
+Acceptable types: Any type
+
+## Related attribute
+
+`UILookup` - is related attribute.
+
+Properties:
+- `ItemLookupType`
+- `ItemLookupProperty`
+- `ValueMember`
+- `DisplayMember`
+- `DisplayProviderType`
 
 ## Item look up type
 
@@ -68,10 +70,3 @@ public string Field { get; set; }
 private class DisplayProvider : IDisplayProvider 
 { /* Implementations */ }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

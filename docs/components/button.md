@@ -1,16 +1,26 @@
 # Button
-
-**Behavior control attribute:**  `UIButtonAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `string`, `Action`, `Func<Task>`, `Task`, `Task<IUICommandResult>,` `object`
+Simple button control.
 
 ###  Example
 ```csharp
 [UIButton]
 public string ButtonField { get; set; }
 ```
+
+## Value Type
+
+No automatically recognized types, **attribute `UIButton` is required**.
+
+Acceptable types:
+- `string` - command name or other link
+- `Action`, `Func<Task>`, `Task<IUICommandResult>,` - in place command
+-  `object` - for other, not listed types is used as link (see ILinkResolver).
+
+>! Warning: Do not execute method in property getter, return method delegate instead to avoid accidental execution during value binding. Framework gets value before clicking just to check if button is clickable.
+
+## Related attribute
+
+`UIButton` - is related attribute.
 
 ## `String` type - command button
 The value of property with `UIButtonAttribute` attribute is set to a name of method with `UICommandAttribute` attribute.
@@ -105,10 +115,3 @@ public object Link => "https://tagbites.com";
 [UIIcon(MaterialIcons.Call)]
 public string CommandName { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms)  | &check; |
-| Windows (WinForms) | &check; |

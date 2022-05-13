@@ -1,24 +1,25 @@
 # Text
 
-**Behavior control attribute:**  `UITextAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `string`
-
 ###  Example
 ```csharp
 [UIText]
 public string Text { get; set; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UITextAttribute` property | 
-| -----------|:------------- 
-| View type | `ViewType` |
-| Horizontal alignment | `HorizontalAlignment` |
-| Vertical alignment | `VerticalAlignment` |
+No automatically recognized types, **attribute `UIText` is required**.
+
+Acceptable types: Any type, if the parse fails, the default value is set.
+
+## Related attribute
+
+`UIText` - is related attribute
+
+Properties:
+- `ViewType`
+- `HorizontalAlignment`
+- `VerticalAlignment`
 
 ## View type
 
