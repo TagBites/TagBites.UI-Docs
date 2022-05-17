@@ -1,23 +1,23 @@
 # Sections
 
-**Behavior control attribute:**  `UISectionsAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
-### Example
+###  Example
 ```csharp
 [UISections]
-public object Sections { get; }
+ public IList<object> Sections { get; }
 ```
 
-## Parameters setting
-| Parameter | `UISectionsAttribute` property | 
-| -----------|:------------- 
-| Id member| `IdMember` |
-| View member | `ViewMember` |
-| Display member | `DisplayMember` |
+## Value type
+
+No automatically recognized types, **attribute `UISections` is required**.
+
+## Related attribute
+
+`UISections` - is related attribute.
+
+Properties:
+- `IdMember`
+- `ViewMember`
+- `DisplayMember`
 
 ## Id member
 
@@ -39,10 +39,3 @@ public object Sections { get; }
 [UISections("ViewMember", "DisplayMember")]
 public object Sections { get; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

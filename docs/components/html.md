@@ -6,7 +6,7 @@
 public string Html { get; set; }
 ```
 
-
+## Value Type
 
 No automatically recognized types, **attribute `UIHtml` is required**.
 

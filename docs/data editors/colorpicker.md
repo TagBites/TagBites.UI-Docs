@@ -5,7 +5,7 @@ A color picker is used to browse through and select colors.
 ### Example
 ```csharp
 [UIColorPicker]
-public UIColor MyColor { get; set; }
+public UIColor Color { get; set; }
 ```
 
 ## Value Type

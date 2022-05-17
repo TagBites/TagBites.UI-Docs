@@ -36,4 +36,3 @@ public UIFileSource ImageFile { get; set; }
 [UIFile(Extensions = ".jpg, .png", MaximumFileLength = 16 * 1024)]
 public UIFileSource ImageFileUpTo16Kb { get; set; }
 ```
-

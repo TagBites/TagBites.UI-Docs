@@ -1,25 +1,29 @@
 # Web view
 
-**Behavior control attribute:**  `UIWebSourceAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `string`
-
-###  Example
+##  Example
 ```csharp
 [UIWebSource]
 public string Field { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UINumericAttribute` property | 
-| -----------|:------------- 
-| Source type | `SourceType` |
-| Script | `ScriptObjectProperty` |
-| Url | `BaseUrl` or `BaseUrlProperty` |
-| Allow navigation | `AllowNavigation` |
+No automatically recognized types, **attribute `UIWebSource` is required**.
+
+Acceptable types:
+- `object`
+- `string`
+
+## Related attribute
+
+`UIWebSource` - is related attribute.
+
+Properties:
+- SourceType
+- ScriptObjectProperty
+- BaseUrl
+- BaseUrlProperty
+- AllowNavigation
 
 ## Source type
 
@@ -74,11 +78,3 @@ public string ScriptObject { get; set; }
 [UIWebSource(AllowNavigation = true)]
 public string WebSource { get; set; }
 ```
-
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

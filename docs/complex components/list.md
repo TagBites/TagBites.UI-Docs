@@ -1,39 +1,44 @@
 # List
 
-**Behavior control attribute:**  `UIListAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
 ###  Example
 ```csharp
 [UIList]
 public object Field { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIListAttribute` property | 
-| -----------|:------------- 
-| View type | `ViewType` |
-| Allow sorting | `AllowSorting` |
-| Read only | `ReadOnly` or `ReadOnlyProperty` |
-| Editable | `Editable` or `EditableProperty` |
-| Show menu | `ShowMenu` |
-| Show find | `ShowFind` |
-| Show details | `ShowDetails` |
-| Show columns | `ShowColumns` |
-| Select mode | `SelectMode` |
-| Details view member | `DetailsViewMember` |
-| Find filter text | `FindFilterTextProperty` |
-| Focused row | `FocusedRowProperty` |
-| Selected rows | `SelectedRowsProperty` |
-| Filters view | `FiltersViewProperty` |
-| Add command | `AddCommand` |
-| Add child command | `AddChildCommand` |
-| Delete command | `DeleteCommand` |
-| Enter command | `EnterCommand` |
+No automatically recognized types, **attribute `UIList` is required**.
+
+Acceptable types:
+- `object`
+- `IEnumerable` implementations
+
+## Related attribute
+
+`UIList` - is related attribute.
+
+Properties:
+- `ViewType`
+- `AllowSorting`
+- `ReadOnly`
+- `ReadOnlyProperty`
+- `Editable`
+- `EditableProperty`
+- `ShowMenu`
+- `ShowFind`
+- `ShowDetails`
+- `ShowColumns`
+- `SelectMode`
+- `DetailsViewMember`
+- `FindFilterTextProperty`
+- `FocusedRowProperty`
+- `SelectedRowsProperty`
+- `FiltersViewProperty`
+- `AddCommand`
+- `AddChildCommand`
+- `DeleteCommand`
+- `EnterCommand`
 
 ## View type
 

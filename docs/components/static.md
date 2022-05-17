@@ -6,7 +6,7 @@
 public string StaticField { get; set; }
 ```
 
-## Value Type
+## Value type
 
 No automatically recognized types, **attribute `UIStatic` is required**.
 

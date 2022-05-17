@@ -3,7 +3,7 @@
 ### Example
 ```csharp
 [UILayout]
-public char Character { get; set; }
+public char Character { get; set; } = 't';
 ```
 
 ## Value Type

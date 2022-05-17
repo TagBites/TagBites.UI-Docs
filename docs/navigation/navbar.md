@@ -1,32 +1,35 @@
 # Navbar
 
-**Behavior control attribute:**  `UINavBarAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
 ###  Example
 ```csharp
 [UINavBar]
 public object NavBars { get; set; }
 ```
 
-## Parameters setting
+## Value type
 
-| Parameter | `UINavBarAttribute` property | 
-| -----------|:------------- 
-| Item group | `ItemGroupMember` |
-| Item icon | `ItemIconMember` |
-| Item display | `ItemDisplayMember` |
-| Item link | `ItemLinkMember` |
-| Group source | `GroupSourceProperty` |
-| Group id | `GroupIdMember` |
-| Group icon | `GroupIconMember` |
-| Group display | `GroupDisplayMember` |
-| Active item | `ActiveItemProperty` |
-| Is find field shown | `ShowFind` |
-| Enter command | `EnterCommand` |
+No automatically recognized types, **attribute `UINavBar` is required**.
+
+Acceptable types:
+- `object`
+- `IEnumerable` implementations
+
+## Related attribute
+
+`UINavBar` - is related attribute.
+
+Properties:
+- `ItemGroupMember`
+- `ItemIconMember`
+- `ItemDisplayMember`
+- `ItemLinkMember`
+- `GroupSourceProperty`
+- `GroupIdMember`
+- `GroupIconMember`
+- `GroupDisplayMember`
+- `ActiveItemProperty`
+- `ShowFind`
+- `EnterCommand`
 
 ## Item group
 
@@ -104,10 +107,3 @@ public object Field { get; set; }
 [UICommand]
 public void Enter() => { /*action*/ }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) ||
-| iOS (Xamarin.Forms) ||
-| Windows (WinForms) | &check; |

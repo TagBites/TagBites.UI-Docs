@@ -1,23 +1,24 @@
 # Map
 
-**Behavior control attribute:**  `UIMapAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`
-
-### Example
+## Example
 
 ```csharp
 [UIMap]
 public object Map { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIDateTimeAttribute` property | 
-| -----------|:------------- 
-| Show user location | `ShowUserLocation` |
+No automatically recognized types, **attribute `UIMap` is required**.
+
+Acceptable types: object
+
+## Related attribute
+
+`UIMap` - is related attribute.
+
+Properties:
+- `ShowUserLocation`
 
 ## Show user location 
 
@@ -25,10 +26,3 @@ public object Map { get; set; }
 [UIMap(ShowUserLocation = true)]
 public object Map { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

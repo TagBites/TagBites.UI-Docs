@@ -1,42 +1,47 @@
 # Tree
 
-**Behavior control attribute:**  `UITreeAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
-###  Example
+##  Example
 ```csharp
 [UITree("ParentMember", "ChildNodesMember")]
 public object Tree { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UITreeAttribute` property | 
-| -----------|:------------- 
-| Key | `KeyMember` |
-| Parent and Child nodes | `ParentMember` and `ChildNodesMember`  |
-| Is leaf | `IsLeafMember` |
-| Recursive view | `ForceRecursiveView` |
-| Skip root data source | `SkipRootDataSource` |
-| View type | `ViewType` |
-| ReadOnly | `ReadOnly` |
-| Editable | `Editable` |
-| Show menu | `ShowMenu` |
-| Show find | `ShowFind` |
-| Show details | `ShowDetails` |
-| Show columns | `ShowColumns` |
-| Select mode | `SelectMode` |
-| Details view member | `DetailsViewMember` |
-| Find filter text | `FindFilterTextProperty` |
-| Focused row | `FocusedRowProperty` |
-| Selected rows | `SelectedRowsProperty` |
-| Add command | `AddCommand` |
-| Add child command | `AddChildCommand` |
-| Delete command | `DeleteCommand` |
-| Enter command | `EnterCommand` |
+No automatically recognized types, **attribute `UITree` is required**.
+
+Acceptable types: 
+- `object`, 
+- `IEnumerable` implementations
+
+## Related attribute
+
+`UITree` - is related attribute.
+
+Properties:
+- `KeyMember`
+- `ParentMember`
+- `ChildNodesMember`
+- `IsLeafMember`
+- `ForceRecursiveView`
+- `SkipRootDataSource`
+- `ViewType`
+- `ReadOnly`
+- `ReadOnlyProperty`
+- `Editable`
+- `ShowMenu`
+- `ShowFind`
+- `ShowDetails`
+- `ShowColumns`
+- `SelectMode`
+- `DetailsViewMember`
+- `FindFilterTextProperty`
+- `FocusedRowProperty`
+- `SelectedRowsProperty`
+- `AddCommand`
+- `AddChildCommand`
+- `DeleteCommand`
+- `EnterCommand`
 
 ## Key
 
@@ -224,10 +229,3 @@ public object Tree { get; set; }
 [UICommand]
 public void Enter() => { /*action*/ }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

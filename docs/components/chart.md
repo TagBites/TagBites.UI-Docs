@@ -1,11 +1,5 @@
 # Chart
 
-**Behavior control attribute:**  `UIChartAttribute`
-
-**Types automatically recognized:** none
-
-**Acceptable types**: Collections of types `ValueTuple`, `Tuple` or `KeyValuePair` with two numeric values or three values where a first is string and two numerics or collections with custom types.
-
 ### Example
 
 ```csharp
@@ -13,14 +7,23 @@
 public List<(int, int)> Points { get; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIListAttribute` property | 
-| -----------|:------------- 
-| View type | `ViewType` |
-| Is rotated | `Rotated` |
-| Arguments and values | `ArgumentMember` or `ValueMember` |
-| Series | `SeriesMember` |
+No automatically recognized types, **attribute `UIChart` is required**.
+
+Acceptable types: 
+- Collections of types `ValueTuple`, `Tuple` or `KeyValuePair` with two numeric values or three values where a first is string and two numerics or collections with custom types.
+
+## Related attribute
+
+`UIChart` - is related attribute.
+
+Properties:
+- `ViewType`
+- `Rotated`
+- `ArgumentMember`
+- `ValueMember`
+- `SeriesMember` 
 
 ## View type
 

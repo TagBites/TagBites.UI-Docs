@@ -1,4 +1,4 @@
-# Progress
+# Progress bar
 
 ###  Example
 ```csharp

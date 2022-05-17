@@ -1,28 +1,29 @@
 # Workspace
 
-**Behavior control attribute:**  `UIWorkspaceAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
 ###  Example
 ```csharp
 [UIWorkspace]
 public object Field { get; set; }
 ```
+## Value Type
 
-## Parameters setting
+No automatically recognized types, **attribute `UIWorkspace` is required**.
 
-| Parameter | `UIWorkspaceAttribute` property | 
-| -----------|:------------- 
-| View type | `ViewType` |
-| Active window | `ActiveWindowProperty` |
-| Active panel | `ActivePanelProperty` |
-| Id member | `IdMember` |
-| View member | `ViewMember` |
-| Is panel | `IsPanelMember` |
+## Related attribute
 
+`UIWorkspace` - is related attribute.
+
+Acceptable types:
+- `object`
+- `IEnumerable` implementations
+
+Properties:
+- `ViewType`
+- `ActiveWindowProperty`
+- `ActivePanelProperty`
+- `IdMember`
+- `ViewMember`
+- `IsPanelMember`
 
 ## View type
 

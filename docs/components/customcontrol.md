@@ -1,24 +1,26 @@
 # Custom control
 
-**Behavior control attribute:**  `UIEditorAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: Any type, if the parse fails, the default value is set.
-
 ### Example
 ```csharp
 [UIEditor(typeof(CustomControl))]
 public object CustomControlField { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UIEditorAttribute` property | 
-| -----------|:------------- 
-| Editor type | `EditorType` or `EditorTypeName`|
-| Editor value property | `EditorValuePropertyName`|
-| One way binding | `OneWayBinding`|
+No automatically recognized types, **attribute `UIEditor` is required**.
+
+Acceptable types: Any type, if the parse fails, the default value is set.
+
+## Related attribute
+
+`UIEditor` - is related attribute.
+
+Properties:
+- `EditorType`
+- `EditorTypeName`
+- `EditorValuePropertyName`
+- `OneWayBinding`
 
 ## Editor type
 
@@ -50,10 +52,3 @@ public object CustomControlField { get; set; }
 [UIEditor(typeof(CustomControl), OneWayBinding = true)]
 public object CustomControlField { get; set; }
 ```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) | &check; |
-| iOS (Xamarin.Forms) | &check; |
-| Windows (WinForms) | &check; |

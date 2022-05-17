@@ -1,11 +1,5 @@
 # Scheduler
 
-**Behavior control attribute:**  `UISchedulerAttribute`
-
-**Types automatically recognized:** None
-
-**Acceptable types**: `object`, `IEnumerable` implementations
-
 ### Example
 
 ```csharp
@@ -13,45 +7,27 @@
 public IList<Item> Items { get; set; }
 ```
 
-## Parameters setting
+## Value Type
 
-| Parameter | `UISchedulerAttribute` property | 
-| -----------|:------------- 
-| Extensions | `IntervalProperty` |
-| x | `GroupingProperty` |
-| x | `ItemIdMember` |
-| x | `ItemResourceIdMember` |
-| x | `ItemStartMember` |
-| x | `ItemEndMember` |
-| x | `ItemSubjectMember` |
-| x | `ItemDescriptionMember` |
-| x | `ItemColorMember` |
-| x | `ItemPercentCompleteMember` |
-| x | `ResourceIdMember` |
-| x | `ResourceCaptionMember` |
+No automatically recognized types, **attribute `UIScheduler` is required**.
 
-| x | `EnterCommand` |
-| x | `UpdateCommand` |
-| x | `CreateCommand` |
+Acceptable types:
+- `object`
+- `IEnumerable` implementations
 
-
-## Extensions
-
-```csharp
-[UIFile(Extensions = ".jpg, .png")]
-public UIFileSource ImageFile { get; set; }
-```
-
-## Maximum file length
-
-```csharp
-[UIFile(Extensions = ".jpg, .png", MaximumFileLength = 16 * 1024)]
-public UIFileSource ImageFileUpTo16Kb { get; set; }
-```
-
-| Platform | Support | 
-| -----------|:-------------:| 
-| Web (Blazor) | &check; |
-| Android (Xamarin.Forms) |  |
-| iOS (Xamarin.Forms) |  |
-| Windows (WinForms) | &check; |
+Properties:
+- `IntervalProperty`
+- `GroupingProperty`
+- `ItemIdMember`
+- `ItemResourceIdMember`
+- `ItemStartMember`
+- `ItemEndMember`
+- `ItemSubjectMember`
+- `ItemDescriptionMember`
+- `ItemColorMember`
+- `ItemPercentCompleteMember`
+- `ResourceIdMember`
+- `ResourceCaptionMember`
+- `EnterCommand`
+- `UpdateCommand`
+- `CreateCommand`
