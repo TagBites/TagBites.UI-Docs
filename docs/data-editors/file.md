@@ -1,10 +1,12 @@
 # File
 
-### Example
+The file control allows a user to upload a file and open to read.
+
+## Example
 
 ```csharp
 [UILayout]
-public UIFileSource Field { get; set; }
+public UIFileSource Field { get; set; } =  UIFileSource.CreateFromBytes("virtual-file.txt", () => Encoding.UTF8.GetBytes("Virtual file content."));
 ```
 
 ## Value Type
@@ -13,7 +15,7 @@ Automatically recognized in a form and the use of the `UIFileSource` attribute i
 
 Acceptable types:
 - `string` - path to a file
-- `UIFileSource` - TODO
+- `UIFileSource` - provides such information as file name and source
 
 ## Related attribute
 

@@ -1,9 +1,11 @@
 # Numeric
 
-###  Example
+The numeric control allows a user to edit numeric value.
+
+##  Example
 ```csharp
 [UILayout]
-public decimal Decimal { get; set; }
+public decimal Decimal { get; set; } = 3.14m;
 ```
 
 ## Value type

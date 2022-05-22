@@ -1,10 +1,11 @@
 # Track bar
 
+The track bar control allows a user to select a numeric value by selecting a position on the bar.
 
-### Example
+## Example
 ```csharp
 [UINumeric(ViewType = UINumericViewType.TrackBar, Minimum = 0, Maximum = 100)]
-public decimal Field { get; set; }
+public decimal Field { get; set; } = 25;
 ```
 
 ## Value type

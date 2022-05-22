@@ -1,12 +1,12 @@
 # Date time picker
 
-A date time picker lets users select a date, date time or month.
+The date time picker allows users to select a date, date time or month.
 
-### Example
+## Example
 
 ```csharp
 [UILayout]
-public DateTime DateTime { get; set; }
+public DateTime DateTime { get; set; } = DateTime.Now;
 ```
 
 ## Value type
@@ -35,11 +35,11 @@ Properties:
 
 ```csharp
 [UIDateTime(UIDateTimeType.DateTime)]
-public DateTime DateTime { get; set; }
+public DateTime DateTime { get; set; } = DateTime.Now;
 
 [UIDateTime(UIDateTimeType.Date)]
-public DateTime Date { get; set; }
+public DateTime Date { get; set; } = DateTime.Now;
 
 [UIDateTime(UIDateTimeType.Month)]
-public DateTime Month { get; set; }
+public DateTime Month { get; set; } = DateTime.Now;
 ```

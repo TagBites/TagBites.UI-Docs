@@ -1,11 +1,11 @@
 # Time picker
 
-A time picker lets users select a time.
+The time picker control allows a user to select a time, including format e.g. day time format and precision of a value.
 
-### Example
+## Example
 ```csharp
 [UILayout]
-public TimeSpan TimeSpan { get; set; }
+public TimeSpan TimeSpan { get; set; } = DateTime.Now.TimeOfDay;
 ```
 
 ## Value type
@@ -31,14 +31,16 @@ Properties:
 | `TimeOfDay` | Specifies time of day format. |
 
 ```csharp
+[UILayout]
 [UITimeSpan(UITimeSpanType.PositiveOrNegative)]
-public TimeSpan PositiveOrNegative { get; set; }
+public TimeSpan PositiveOrNegative { get; set; } = DateTime.Now.TimeOfDay;
 
+[UILayout]
 [UITimeSpan(UITimeSpanType.Positive)]
-public TimeSpan Positive { get; set; }
+public TimeSpan Positive { get; set; } = DateTime.Now.TimeOfDay;
 
 [UITimeSpan(UITimeSpanType.TimeOfDay)]
-public TimeSpan TimeOfDay { get; set; }
+public TimeSpan TimeOfDay { get; set; } = DateTime.Now.TimeOfDay;
 ```
 
 ## Precision
@@ -53,15 +55,19 @@ public TimeSpan TimeOfDay { get; set; }
 **Note:** The default is `UITimeSpanPrecision.Minutes`.
 
 ```csharp
-[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Milliseconds)]
-public TimeSpan TimeOfDay { get; set; }
-
-[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Seconds)]
-public TimeSpan TimeOfDayWithSeconds { get; set; }
-
-[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Minutes)]
-public TimeSpan TimeOfDayWithMinutes { get; set; }
-
+[UILayout]
 [UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Hours)]
-public TimeSpan TimeOfDayWithHours { get; set; }
+public TimeSpan TimeOfDay { get; set; } = DateTime.Now.TimeOfDay;
+
+[UILayout]
+[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Minutes)]
+public TimeSpan TimeOfDayWithMinutes { get; set; } = DateTime.Now.TimeOfDay;
+
+[UILayout]
+[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Seconds)]
+public TimeSpan TimeOfDayWithSeconds { get; set; } = DateTime.Now.TimeOfDay;
+
+[UILayout]
+[UITimeSpan(UITimeSpanType.TimeOfDay, Precision = UITimeSpanPrecision.Milliseconds)]
+public TimeSpan TimeOfDayWithMilliseconds { get; set; } = DateTime.Now.TimeOfDay;
 ```

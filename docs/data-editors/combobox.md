@@ -2,12 +2,18 @@
 
 Represents a selection control with a drop-down list that can be displayed or hidden.
 
-###  Example
+##  Example
 
 ```csharp
-[UIDictionary(nameof(FieldDataSource))]
-public string Field { get; set; }
-public object FieldDataSource { get; }
+[UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value")]
+public int? Field { get; set; }
+public object FieldDataSource { get; }= new List<KeyValuePair<int?, string>>()
+{
+    new (null, "Empty"),
+    new (0, "Item 1"),
+    new (1, "Item 2"),
+    new (2, "Item 3")
+};
 ```
 
 ## Value type
@@ -21,14 +27,14 @@ Properties:
 - `ValueMember` - key identifier
 - `DisplayMember` - display name identifier
 - `DisplayProviderType` - custom display provider
-- `ViewType`
+- `ViewType` - 
 
 ## Data source
 
 ```csharp
 [UIDictionary(nameof(FieldDataSource))]
 public string Field { get; set; }
-public object FieldDataSource { get; }
+public object FieldDataSource { get; } = new[] { "Empty", "Item 1", "Item 2", "Item 3" };
 ```
 
 ## Value and display properties
@@ -38,7 +44,13 @@ A data source can provide collections containing complex types, in which case it
 ```csharp
 [UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value")]
 public int? Field { get; set; }
-public object FieldDataSource { get; }
+public object FieldDataSource { get; }= new List<KeyValuePair<int?, string>>()
+{
+    new (null, "Empty"),
+    new (0, "Item 1"),
+    new (1, "Item 2"),
+    new (2, "Item 3")
+};
 ```
 
 ## Custom display provider
@@ -46,14 +58,27 @@ A control can use custom display provider by using a user-defined class, which i
 
 ```csharp
 [UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value", DisplayProviderType = typeof(DisplayProvider))]
-public int Field { get; set; }
-public IList<KeyValuePair<int, int>> FieldDataSource
-
-private class DisplayProvider : IDisplayProvider
+public int Field { get; set; } = 2;
+public object FieldDataSource { get; } = new[]
 {
-    public string GetName(object obj) => // custom name
-    public string GetShortName(object obj) => // custom short name
-    public string GetDescription(object obj) => // custom description
+    new KeyValuePair<int, int>(1, 1),
+    new KeyValuePair<int, int>(2, 2),
+    new KeyValuePair<int, int>(3, 3),
+    new KeyValuePair<int, int>(4, 4)
+};
+
+
+private class DisplayProvider : TagBites.UI.Components.IDisplayProvider
+{
+    public string GetName(object obj)
+    {
+        if (obj is not int value || value == 0)
+            return "None";
+
+        return $"{value} - {new string('A', value)}";
+    }
+    public string GetShortName(object obj) => null;
+    public string GetDescription(object obj) => null;
 }
 ```
 
@@ -66,8 +91,4 @@ private class DisplayProvider : IDisplayProvider
 
 **Note:** The default is `UIDictionaryViewType.Default`.
 
-```csharp
-[UIDictionary(nameof(FieldDataSource), ValueMember = "Key", DisplayMember = "Value", ViewType = UIDictionaryViewType.Tokens)]
-public string Field { get; set; }
-public object FieldDataSource { get; set; }
-```
+Examples of using the view [Tokens](tokens.md) and [Buttons](buttons.md).

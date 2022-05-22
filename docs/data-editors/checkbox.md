@@ -1,6 +1,6 @@
 # CheckBox
 
-### Example
+## Example
 
 ```csharp
 [UILayout]
